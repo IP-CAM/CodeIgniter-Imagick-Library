@@ -13,7 +13,8 @@
 
 class Imagick_lib {
 
-	protected $_ci;                 // CodeIgniter instance
+	private $debug;
+
 	protected $_imagickdraw;
 	protected $_imagick;
 
@@ -27,10 +28,6 @@ class Imagick_lib {
 	public $string;
 	public $out_put_path;
 	public $file_name;
-
-	private $debug;
-
-
 
 	function __construct($config){
 
@@ -57,7 +54,6 @@ class Imagick_lib {
 		}
 			return preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY);
 	}
-
 
 	private function _draw(){
 		$str_arr = $this->str_split_unicode($this->string);
